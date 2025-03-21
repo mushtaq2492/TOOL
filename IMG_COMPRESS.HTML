@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online image compression tool to optimize your images with adjustable compression levels.">
+    <title>Image Compression Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #compression-tool {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+            display: block;
+        }
+
+        label {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .advertisement {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        img {
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #compression-tool {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="compression-tool">
+    <h1>Image Compression Tool</h1>
+
+    <!-- File Input -->
+    <input type="file" id="imageInput" accept="image/*">
+    
+    <!-- Compression Level -->
+    <label for="compressionLevel">Compression Level: <span id="compressionValue">50</span>%</label>
+    <input type="range" id="compressionLevel" min="0" max="100" value="50">
+    
+    <!-- Compress Button -->
+    <button id="compressButton">Compress Image</button>
+    
+    <!-- Output Image -->
+    <h2>Compressed Image</h2>
+    <img id="compressedImage" alt="Compressed Image Will Appear Here" style="display:none; max-width: 100%;">
+    
+    <!-- Advertisement Space -->
+    <div class="advertisement">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-XXXXXXXXXXXX"  <!-- Replace with your AdSense client ID -->
+            data-ad-slot="YYYYYYYYYY"               <!-- Replace with your AdSense ad slot ID -->
+            data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+
+<script>
+    const imageInput = document.getElementById('imageInput');
+    const compressionLevel = document.getElementById('compressionLevel');
+    const compressionValue = document.getElementById('compressionValue');
+    const compressButton = document.getElementById('compressButton');
+    const compressedImage = document.getElementById('compressedImage');
+
+    compressionLevel.oninput = function () {
+        compressionValue.innerText = compressionLevel.value;
+    };
+
+    compressButton.onclick = function () {
+        const file = imageInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    const quality = compressionLevel.value / 100;
+
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    context.drawImage(img, 0, 0);
+                    compressedImage.src = canvas.toDataURL('image/jpeg', quality);
+                    compressedImage.style.display = 'block';
+                };
+            };
+            reader.readAsDataURL(file);
+        } else {
+            alert("Please select an image file first.");
+        }
+    };
+</script>
+
+</body>
+</html>
