@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tools for Image and PDF management. Compress, convert, and optimize your files with ease.">
+    <title>Tools Hub - Image & PDF Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #007bff;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #hero {
+            background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        #hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        #hero p {
+            font-size: 1.2em;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            flex: 1 1 30%;
+            min-width: 250px;
+            max-width: calc(33.333% - 20px);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .tool-card:hover {
+            transform: scale(1.05);
+        }
+
+        .tool-card img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            margin-top: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .tool-card {
+                flex: 1 1 45%;
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tool-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            #hero h1 {
+                font-size: 2em;
+            }
+
+            #hero p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tools Hub</h1>
+    <nav>
+        <a href="#image-tools">Image Tools</a>
+        <a href="#pdf-tools">PDF Tools</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="hero">
+    <h1>Your All-in-One Tools Website</h1>
+    <p>Compress, convert, and manage your images and PDFs effortlessly!</p>
+</section>
+
+<div class="container">
+    <h2 id="image-tools">Image Tools</h2>
+   <a href="/img_compress.html"image-compression-tool.html" style="text-decoration: none; color: inherit;">
+    <div class="tool-card">
+        <img src="https://via.placeholder.com/100" alt="Image Compression Tool">
+        <h3>Image Compression</h3>
+        <p>Reduce the size of images while maintaining quality.</p>
+    </div>
+</a>
+    <div class="tool-card">
+        <img src="https://via.placeholder.com/100" alt="Image Resizer">
+        <h3>Image Resizer</h3>
+        <p>Resize your images to fit your needs perfectly.</p>
+        <a href="image-resizer-tool.html">Go to Tool</a>
+    </div>
+    <div class="tool-card">
+        <img src="https://via.placeholder.com/100" alt="Image Converter">
+        <h3>Image Converter</h3>
+        <p>Convert images between different formats quickly.</p>
+        <a href="image-converter-tool.html">Go to Tool</a>
+    </div>
+
+    <h2 id="pdf-tools">PDF Tools</h2>
+    <div class="tool-card">
+        <img src="https://via.placeholder.com/100" alt="PDF Compressor">
+        <h3>PDF Compressor</h3>
+        <p>Compress your PDFs without losing quality.</p>
+        <a href="pdf-compressor-tool.html">Go to Tool</a>
+    </div>
+    <div class="tool-card">
+        <img src="https://via.placeholder.com/100" alt="PDF Merger">
+        <h3>PDF Merger</h3>
+        <p>Merge multiple PDFs into a single document.</p>
+        <a href="pdf-merger-tool.html">Go to Tool</a>
+    </div>
+    <div class="tool-card">
+        <img src="https://via.placeholder.com/100" alt="PDF Converter">
+        <h3>PDF Converter</h3>
+        <p>Convert PDFs to various formats and vice-versa.</p>
+        <a href="pdf-converter-tool.html">Go to Tool</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2023 Tools Hub. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
